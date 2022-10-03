@@ -19,7 +19,7 @@ public class Main {
         product2.setProductName("Phone N91");
         product2.setColor("Blue");
         product2.setWarrantyPeriod("1");
-        product2.setProductPrice(100);
+        product2.setProductPrice(1000);
 
 
         Product product3 = new Product();
@@ -52,21 +52,20 @@ public class Main {
         productsTable2.setProductPrice(10000);
 
 
-//  Ürünleri liste içerisine aldık.
+//  Ürünleri liste içerisine aldık ve kullanıcıya sırası ile ürün isimlerini sunduk
         Product[] products = {product1, product2, product3, productsTable1,productsTable2};
-        System.out.println(
-                product1.getId() + " " + product1.getProductName() + "\n" +
-                        product2.getId() + " " + product2.getProductName() + "\n" +
-                        product3.getId() + " " + product3.getProductName() + "\n" +
-                        productsTable1.getId() + " " + productsTable1.getProductName() + "\n"+
-                        productsTable2.getId() + " " + productsTable2.getProductName() + "\n");
+
+        for (Product product : products) {
+            System.out.println(product.getId() + " " + product.getProductName());
+
+        }
 
 // ürün seçimi ve fiyat hesaplamalarını yaptık
         ProductManager productManager = new ProductManager();
         int selectProduct;
         Scanner scanner=new Scanner(System.in);
         System.out.println("Almak istediğiniz ürünü seçiniz :");
-        selectProduct=scanner.nextInt();
+        selectProduct=scanner.nextInt()-1;
 
         productManager.DiscountCallculator(products[selectProduct]);
 
