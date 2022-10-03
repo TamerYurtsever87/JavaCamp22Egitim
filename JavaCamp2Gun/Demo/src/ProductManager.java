@@ -1,4 +1,5 @@
 public class ProductManager {
+    // ürün ve ürünle ilgili bilgiler
     double discount = 18;
     double yuzde = 100;
     double discountYuzde = discount / yuzde;
@@ -16,29 +17,31 @@ public class ProductManager {
     }
 
     // Parametreli metod oluşturduk.
-    public void DiscountCallculator(double productPrice,String productName) {
+    //Indirim oranı ve Kargo ücreti hesaplama bilgisini müşteriye sunma.
+    public void DiscountCallculator(Product product) {
 
         if (discountYuzde >= 0.10 && discountYuzde <= 0.18) {
 
-            toplam = productPrice * discountYuzde;
-            total = productPrice - toplam;
-            if (productPrice > cargoOrani) {
+            toplam = product.getProductPrice() * discountYuzde;
+            total = product.getProductPrice() - toplam;
+            if (product.getProductPrice() > cargoOrani) {
                 totalNet = total;
                 cargoPrice = 0;
-                System.out.println("Sepete Eklenen ürün: "+productName+" Ürün fiyatı: " + productPrice + "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
+                System.out.println("Sepete Eklenen ürünün Adı: "+"''"+product.getProductName()+"''"+"\nÜrünün fiyatı: " + product.getProductPrice() + "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
                 System.out.println("Kargo Ücretsiz.");
             } else {
                 totalNet = total + cargoPrice;
-                System.out.println("Sepete Eklenen ürün: "+productName+" Ürün fiyatı: " + productPrice + "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
+                System.out.println("Sepete Eklenen ürün: "+"''"+product.getProductName()+"''"+"\nÜrün fiyatı: " + product.getProductPrice()+ "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
+                System.out.println("Sadece 300 TL ve üzeri Alış Veriş lerde Kargo Ücretsizdir.");
             }
 
         } else if (discountYuzde < 0.10 || discountYuzde > 0.18) {
             cargoPrice = 0;
-            toplam = productPrice * discountYuzde;
-            total = productPrice - toplam;
+            toplam = product.getProductPrice() * discountYuzde;
+            total = product.getProductPrice()- toplam;
             totalNet = total + cargoPrice;
 
-            System.out.println("Ürün fiyatı: " + productPrice + "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
+            System.out.println("Ürün fiyatı: " + product.getProductPrice() + "TL + indirim Oranı %" + discount + "\n" + "AraToplam= " + total + "TL + Kargo Ücreti: " + cargoPrice + "TL\n" + "Ödenecek Tutar: " + totalNet + "TL");
             System.out.println("Kargo Ücretsiz.");
         }
     }

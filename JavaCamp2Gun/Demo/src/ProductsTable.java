@@ -1,8 +1,8 @@
 public class ProductsTable extends Product{
-    private float height;
-    private float length;
-    private float width;
-    private int numberOfChairs;
+    private float height; // ürünün yüksekliği
+    private float length; // ürünün uzunluğu
+    private float width; // ürünün genişliği
+    private int numberOfChairs; // Sandalye sayısı
 
 
     public float getHeight() {

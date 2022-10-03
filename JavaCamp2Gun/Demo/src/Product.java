@@ -1,11 +1,13 @@
+import java.util.Scanner;
 public class Product {
 
+
     // Kapsülleme ile setter ve getter tanımladık ki istediğimiz bilgileri gerektiğinde saklayıp gerektiğinde gösterebilelim.
-    private int id;
-    private String productName;
-    private String color;           // Product classımızın özelliklerini tanımladık.
-    private String warrantyPeriod;
-    private double productPrice;
+    private int id; // ürünün Kodu
+    private String productName;     // ürünün ismi
+    private String color;           // ürünün Rengi               // Product classımızın özelliklerini tanımladık.
+    private String warrantyPeriod;  // Garanti süresi
+    private double productPrice;    // ürün fiyatı
 
     // getter & setter..
     public int getId() {
