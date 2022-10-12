@@ -17,7 +17,7 @@ public class Main {
         Instructor instructor1 = new Instructor(101,"Tamer","Yurtsever","Ankara Üniversitesi , Bilgisayar Mühendisliği Mezunu.");
         Instructor instructor2 = new Instructor(102,"Ahmet","Vatansever","Kocaeli Üniversitesi , Bilgisayar Mühendisliği Mezunu.");
         Course course1 = new Course(1001,"Ahşap Boyama",22,"Ahşapların nasıl boyandığını en ince ayrıtısıyla öğreneceksiniz.",250);
-        Course course2 = new Course(1002,"Metal İşleme",32,"Ahşapların nasıl boyandığını en ince ayrıtısıyla öğreneceksiniz.",350);
+        Course course2 = new Course(1002,"Ahşap Oymacılığı",32,"Ahşapları ince işçilikle işleyerek nasıl desenler çıkartırız, Bu kursta onu görüceksiniz.",350);
 
         BaseLogger[] baseLoggers ={new DatabaseLogger(),new FileLogger(),new MailLogger()};
 
