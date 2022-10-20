@@ -56,8 +56,8 @@ select * from Customers c left join Orders o
 on c.CustomerID= o.CustomerID
 where o.CustomerID is null
 
--- birde right join var, bu da left join tam tersini verir. sağ olup , solda olmayan verileri getirir.
---fakat her sorguda bu calısmaz bu neden genelde inner ve left join'i kullanırız.
+-- birde right join var, bu da left join tam tersini verir. sağ tabloda olup , sol tablo da olmayan verileri getirir.
+-- fakat her sorguda bu calısmaz bu neden genelde inner ve left join'i kullanırız.
 
 
 -- ikiden fazla tabloyu join etmek istersekte.
@@ -66,3 +66,4 @@ select * from Products p inner join [Order Details] od
 on p.ProductID = od.ProductID -- Ürün ID'si ile Ürün Detayındaki ID'yi getir.
 inner join Orders o -- siparişleri join et 
 on o.OrderID = od.OrderID -- siparişteki ID ile sipariş Detayındaki ID'yi getir.
+
